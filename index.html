@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <style>
+            #containerA
+            {
+                height: 100%;
+                width: 80%;
+                display: block;
+            }
+            #containerB
+            {
+                height: 100%;
+                width: 20%;
+                display: block;
+            }
+            #outerContainer{
+                width: 100%;
+                height: 75%;
+                display: flex;
+            }
+            #parameterSelectFlexContainer
+            {
+                display: flex;
+            }
+            .parameterContainer
+            {
+                flex-basis:0;
+            }
+            #kSelectContainer
+            {
+                display: block;
+            }
+            #vSelectContainer
+            {
+                display: block;
+            }
+            #pSelectContainer
+            {
+                display: block;
+            }
+            #maxWeightSelectContainer
+            {
+                display: block;
+            }
+            #srcSelectContainer
+            {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        
+                <div id="parameterSelectFlexContainer">
+                    <div id="vSelectContainer" class="parameterContainer">
+                        <label> vertexes:
+                            <input type=number value="12" id="vFromForm">
+                        </label>
+                    </div>
+                    <div id="pSelectContainer" class="parameterContainer">
+                        <label> probability of edge
+                            <input type=number id="pFromForm" value=".15" step=".15">
+                        </label>
+                    </div>
+                    <div id="maxWeightSelectContainer" class="parameterContainer">
+                        <label> max weight
+                            <input type=number value="10" id="maxWeightFromForm">
+                        </label>
+                    </div>
+                    <button onclick="onSubmit()" type=button> generate graph </button>
+                </div>
+        <div id="outerContainer">
+             
+        <div id="containerA" class="container">
+            </div>
+            <div id="containerB" class="container">
+                
+                <div id="srcSelectContainer">
+                    <label> src:
+                        <select id="src">
+                        </select>
+                    </label>
+                    <label> dst:
+                        <select id="dst">
+                        </select>
+                    </label>
+                    <label> k:
+                        <input type="number" id="k">
+                        </input>
+                    </label>
+                    <button type ="button" onclick="yenSubmit()">
+                        find k shortest paths
+                    </button>
+                </div>
+            </div>
+        </div>
+    <script src="js/cytoscape.min.js"></script>
+    <script src="js/GenHeap.js"></script>
+    <script src="js/proj2.js"></script>
+    <script src="js/cytoscapeInit.js"></script>
+    </body>
+</html>
